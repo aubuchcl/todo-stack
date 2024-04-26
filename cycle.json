@@ -26,7 +26,15 @@
                 },
                 "deploy": {
                     "instances": 1,
-                    "strategy": "first-available"
+                    "strategy": "first-available",
+                    "constraints": {
+                        "node": {
+                            "tags": {
+                                "any": [],
+                                "all": ["vultr"]
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -49,7 +57,15 @@
                     "public": "disable"
                 },
                 "deploy": {
-                    "instances": 1
+                    "instances": 1,
+                    "constraints": {
+                        "node": {
+                            "tags": {
+                                "any": [],
+                                "all": ["vultr"]
+                            }
+                        }
+                    }
                 }
             }
         }
