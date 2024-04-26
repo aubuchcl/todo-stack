@@ -26,15 +26,7 @@
                 },
                 "deploy": {
                     "instances": 1,
-                    "strategy": "first-available",
-                    "health_check": {
-                        "command": "./health-check.sh",
-                        "delay": "15s",
-                        "interval": "15s",
-                        "retries": 3,
-                        "restart": true,
-                        "timeout": "30s"
-                    }
+                    "strategy": "first-available"
                 }
             }
         },

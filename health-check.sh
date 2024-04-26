@@ -7,7 +7,7 @@ response=$(curl -s http://localhost:5000/_health)
 message=$(echo "$response" | jq -r '.message')
 
 # Check if the message is "ok"
-if [[ $message == "ok" ]]; then
+if [[ $message == "xy" ]]; then
   echo "Server is online. Exiting with status code 0."
   exit 0
 else
