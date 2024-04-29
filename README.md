@@ -16,24 +16,24 @@ This demonstration is meant to be usable with needing to set up DNS.  To run req
 ### Create
 
 ```bash 
-curl -X POST -d '{"todo": "Buy groceries"}' -H "Content-Type: application/json" http://youdomain.com/todos
+curl -X POST -d '{"todo": "Buy groceries"}' -H "Content-Type: application/json" https://youdomain.com/todos
 ```
 
 ### Read
 
 ```bash
-curl http://youdomain.com/todos
+curl https://youdomain.com/todos
 ```
 
 ### Update 
 
 ```bash 
-curl -X PUT -d '{"todo": "Buy new groceries", "completed": true}' -H "Content-Type: application/json" http://youdomain.com/todos/TODO_ID
+curl -X PUT -d '{"todo": "Buy new groceries", "completed": true}' -H "Content-Type: application/json" https://youdomain.com/todos/TODO_ID
 ```
 
 ### Delete
 
 ```bash
-curl -X DELETE http://youdomain.com/todos/TODO_ID
+curl -X DELETE https://youdomain.com/todos/TODO_ID
 ```
 
