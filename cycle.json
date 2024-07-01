@@ -35,6 +35,12 @@
                         "restart": true,
                         "timeout": "30s"
                     }
+                },
+                "runtime": {
+                    "command": {
+                        "path": "node",
+                        "args": "index.js"
+                    }
                 }
             }
         },
