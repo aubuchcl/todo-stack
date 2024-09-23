@@ -9,7 +9,7 @@
             "name": "api",
             "stateful": false,
             "image": {
-                "name": "api",
+                "name": "api-{{container-name}}",
                 "origin": {
                     "type": "docker-file",
                     "details": {
