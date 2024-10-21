@@ -5,7 +5,7 @@
         "version": "1.0.0"
     },
     "containers": {
-        "api-{{container-name}}": {
+        "api-secondthing-{{container-name}}": {
             "name": "api",
             "stateful": false,
             "image": {
