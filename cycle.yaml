@@ -3,7 +3,7 @@ about:
   version: 1.0.0
   description: A demonstration stack with a simple CRUD API connected to redis.
 scoped_variables: null
-containers:
+  containers:
   api:
     name: api
     image:
