@@ -1,0 +1,52 @@
+version: '1.0'
+about:
+  version: 1.0.0
+  description: A demonstration stack with a simple CRUD API connected to redis.
+scoped_variables: null
+containers:
+  api:
+    name: api
+    image:
+      name: api-{{container-name}}
+      origin:
+        type: docker-file
+        details:
+          existing: null
+          context_dir: /
+          build_file: /Dockerfile
+    stateful: false
+    config:
+      network:
+        public: enable
+        hostname: api
+        ports:
+          - '80:5000'
+          - '443:5000'
+      deploy:
+        instances: 1
+        strategy: first-available
+        health_check:
+          command: ./health-check.sh
+          retries: 3
+          delay: 15s
+          interval: 15s
+          timeout: 30s
+          restart: true
+  redis:
+    name: redis
+    image:
+      name: redis
+      origin:
+        type: docker-hub
+        details:
+          existing: null
+          target: redis:latest
+    stateful: false
+    config:
+      network:
+        public: disable
+        hostname: redis
+        ports:
+          - '6379:6379'
+      deploy:
+        instances: 1
