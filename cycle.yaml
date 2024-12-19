@@ -3,7 +3,6 @@ about:
   version: 1.0.0
   description: A demonstration stack with a simple CRUD API connected to redis.
 scoped_variables: null
-thisshouldbreak: something
 containers:
   api:
     name: api
@@ -24,7 +23,6 @@ containers:
           - '80:5000'
           - '443:5000'
       deploy:
-        instances: 1
         strategy: first-available
         health_check:
           command: ./health-check.sh
