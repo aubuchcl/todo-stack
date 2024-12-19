@@ -23,6 +23,7 @@ containers:
           - '80:5000'
           - '443:5000'
       deploy:
+        instances: null
         strategy: first-available
         health_check:
           command: ./health-check.sh
