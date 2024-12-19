@@ -50,3 +50,4 @@ containers:
           - '6379:6379'
       deploy:
         instances: 1
+  container3:
