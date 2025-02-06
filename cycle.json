@@ -13,7 +13,8 @@
                 "origin": {
                     "type": "docker-file",
                     "details": {
-                        "build_file": "/Dockerfile",
+                        "existing": null,
+                        "build_file": "/somedir/api.Dockerfile",
                         "context_dir": "/"
                     }
                 },
