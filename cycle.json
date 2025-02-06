@@ -16,6 +16,12 @@
                         "build_file": "/Dockerfile",
                         "context_dir": "/"
                     }
+                },
+                "build": {
+                    "args": {
+                        "TEST": "{{test}}",
+                        "OTHER": "other"
+                    }
                 }
             },
             "config": {
