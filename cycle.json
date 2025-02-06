@@ -5,7 +5,7 @@
         "version": "1.0.0"
     },
     "containers": {
-        "api-{{test}}": {
+        "api": {
             "name": "api",
             "stateful": false,
             "image": {
@@ -19,7 +19,7 @@
                 },
                 "build": {
                     "args": {
-                        "TEST": "{{test}}",
+                        "TEST": "{{super-long--random-words-variable-test}}",
                         "OTHER": "other"
                     }
                 }
