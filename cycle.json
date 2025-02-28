@@ -9,7 +9,7 @@
             "name": "api",
             "stateful": false,
             "image": {
-                "name": "api-{{container-name}}",
+                "name": "api",
                 "origin": {
                     "type": "docker-file",
                     "details": {
@@ -25,22 +25,14 @@
                     "public": "enable"
                 },
                 "deploy": {
-                    "instances": 1,
-                    "strategy": "first-available",
-                    "health_check": {
-                        "command": "./health-check.sh",
-                        "delay": "15s",
-                        "interval": "15s",
-                        "retries": 3,
-                        "restart": true,
-                        "timeout": "30s"
-                    }
+                    "instances": 3,
+                    "strategy": "high-availability",
                 }
             }
         },
         "redis": {
             "name": "redis",
-            "stateful": false,
+            "stateful": true,
             "image": {
                 "name": "redis",
                 "origin": {
@@ -59,7 +51,14 @@
                 "deploy": {
                     "instances": 1
                 }
-            }
+            },
+            "volumes": [
+        {
+          "local": {
+            "max_size": "15G"
+          },
+          "destination": "/data",
+          "read_only": false,
         }
     }
 }
