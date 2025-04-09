@@ -34,6 +34,13 @@
                         "retries": 3,
                         "restart": true,
                         "timeout": "30s"
+                    },
+                    "constraints": {
+                        "node": {
+                            "tags": {
+                                "any": ["api"]
+                            }
+                        }
                     }
                 }
             }
@@ -57,7 +64,14 @@
                     "public": "disable"
                 },
                 "deploy": {
-                    "instances": 1
+                    "instances": 1,
+                    "constraints": {
+                        "node": {
+                            "tags": {
+                                "any": ["redis"]
+                            }
+                        }
+                    }
                 }
             }
         }
